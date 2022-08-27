@@ -1,0 +1,26 @@
+baseURL = "https://ebenami.com"
+languageCode = "en-EN"
+defaultContentLanguage = "en"
+title = "Elinor Benami"
+summaryLength = 10
+RelativeURLs = false
+CanonifyURLs = true
+enableRobotsTXT = true
+enableEmoji = true
+paginate = 8
+enableGitInfo = true
+pygmentsCodefences = true 
+pygmentsUseClasses = true
+
+[params]
+  author = "Elinor Benami"
+  site_name = "Ebenami"
+  description = "Elinor Benami description"
+  locale = "en-US"
+  type = "website"
+
+  primary_color = "#435E4D" # Green Color
+
+  twitter_url = ""
+  linkedin_url = ""
+  github_url = ""

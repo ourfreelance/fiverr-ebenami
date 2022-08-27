@@ -1,0 +1,28 @@
+<section class="grid grid-cols-2 items-center space-x-10 mt-10">
+  <div>
+    <div class="flex items-center gap-3">
+      <img class="inline-block" src="/assets/images/hi.png" alt="">
+      <h1 class="font-lato text-4xl font-bold text-primary">
+        {{ .name }}
+      </h1>
+    </div>
+    <p class="font-roboto my-10 font-medium text-xl text-primary-gray">
+      {{ .description }}
+      <a href="">Read More...</a>
+    </p>
+    <div class="flex items-center gap-5">
+      <a href="emailto:{{ .email }}" class="block px-8 py-3 rounded-md bg-primary text-white font-medium hover:opacity-90 transition">
+        Email Me
+      </a>
+      <a href="{{ .cv_url }}" class="block px-8 py-3 rounded-md border border-primary text-primary font-medium hover:opacity-90 transition">
+        Download CV
+      </a>
+    </div>
+  </div>
+  <div class="relative justify-self-end aspect-[426/421] h-[421px] bg-primary rounded-lg">
+    <img class="absolute bottom-0 left-1/2 -translate-x-1/2" src="/assets/images/profile.png" alt="profile">
+    <img class="absolute top-14 -left-8" src="/assets/images/Mentor.svg" alt="">
+    <img class="absolute bottom-20 -right-8" src="/assets/images/Communicate.svg" alt="">
+  </div>
+
+</section>

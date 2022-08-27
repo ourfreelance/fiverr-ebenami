@@ -1,0 +1,48 @@
+<section class="mt-10">
+  
+  {{ partial "components/section-title.html" (dict 
+    "title" "Posts"
+    "description" "Research, teaching & mentoring, opportunities, resources "
+  )}}
+  <div class="grid grid-cols-2 gap-x-6 gap-y-10">
+    {{ range .posts }}
+      {{if not (in .Params.IsIndex true)}}
+        <div class="bg-white rounded-md p-5">
+          {{ with .Resources.GetMatch "thumbnail.png" }}
+            <img class="mb-6" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
+          {{ end }}
+          <div class="space-y-5">
+            <h2 class="text-3xl font-bold text-primary-dark-gray">
+            {{ .Params.Title }}
+            </h2>
+            <div class="flex items-center gap-4"> 
+              <div class="flex items-center gap-2 font-medium text-primary">
+                <img src="/assets/images/date.svg" alt="">
+                {{ dateFormat "02 Jan, 2006" .Date.Local }}
+              </div>
+              <div class="flex items-center gap-2 font-medium text-primary">
+                <img src="/assets/images/folder.svg" alt="">
+                {{ .Params.Category }}
+              </div>
+            </div>
+            <p class="font-medium line-clamp-2 text-primary-gray">
+              {{ .Params.Description }}
+            </p>
+          </div>
+          <div class="flex mt-8">
+            <a href="{{ .Permalink }}" class="font-roboto block py-4 px-8 rounded-lg bg-primary text-white font-medium hover:opacity-90 transition">
+              Read More
+            </a>
+          </div>
+        </div>
+      {{ end}}
+    {{end}}
+  </div>
+
+  <div class="mt-24 flex justify-center w-full">
+    <button class="font-roboto block py-4 px-8 rounded-lg bg-primary text-white font-medium hover:opacity-90 transition">
+      Load More
+    </button>
+  </div>
+
+</section>

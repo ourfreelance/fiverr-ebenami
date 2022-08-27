@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+  <!-- if content have thumbnail -->
+  {{ if isset .Params "thumbnail"}}
+    <div class="max-w-screen-lg mx-auto">
+      <img
+        id="thumbnail"
+        class="rounded w-full"
+        src="{{ .Params.thumbnail }}" 
+        alt="{{.Title}}"
+      />
+    </div>
+  {{end}}
+
+  <main class="prose lg:prose-xl !max-w-screen-xl prose-headings:text-primary mx-auto text-gray px-5 pt-32 md:pt-48">
+    {{ .Content | safeHTML }}
+  </main>
+
+{{end}}
