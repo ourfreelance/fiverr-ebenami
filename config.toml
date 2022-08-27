@@ -11,6 +11,7 @@ paginate = 8
 enableGitInfo = true
 pygmentsCodefences = true 
 pygmentsUseClasses = true
+theme = "Ebenami"
 
 [params]
   author = "Elinor Benami"

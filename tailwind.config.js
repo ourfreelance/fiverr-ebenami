@@ -2,9 +2,9 @@
 
 module.exports = {
   content: [
-    "./content/**/*.html",
-    "./layouts/**/*.html",
-    "./static/**/*.js",
+    "./themes/**/*.html",
+    "./themes/**/*.html",
+    "./themes/**/*.js",
 
   ],
   theme: {

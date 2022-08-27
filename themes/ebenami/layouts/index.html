@@ -1,0 +1,52 @@
+{{ define "main" }}
+  
+  <main class="pt-32 max-w-screen-xl px-5 mx-auto space-y-52">
+
+    {{ range (where .Site.Pages "Type" "home")}}
+
+      {{ if(eq .Params.Section_type "hero")}}
+        {{ partial "home/hero.html" (dict
+          "name" .Params.Name
+          "short_description" .Params.Short_description
+          "content" .Content
+          "email" .Params.Email
+          "cv_url" .Params.Cv_url
+        )}}
+      {{ end }}
+      
+      {{ if (eq .Params.Section_type "posts")}}
+        {{ partial "home/posts.html" (dict 
+          "title" .Params.Title
+          "description" .Params.Description
+          "posts" (where .Site.Pages "Type" .Params.List_of_folder )
+        )}}
+      {{ end }}
+
+      {{ if (eq .Params.Section_type "gallery") }}
+          {{ partial "home/gallery.html" (dict 
+          "title" .Params.Title
+          "description" .Params.Description
+        )}}
+      {{ end }}
+
+      {{ if (eq .Params.Section_type "students") }}
+          {{ partial "home/students.html" (dict 
+          "title" .Params.Title
+          "description" .Params.Description
+          "students" .Params.students
+        )}}
+      {{ end }}
+
+    {{ end }}
+
+    
+  </main>
+  
+  <footer class="font-lato mt-72 mb-10 max-w-screen-xl mx-auto px-5 text-lg font-bold text-primary-gray">
+    <span class="text-primary">{{ .Site.Params.Author }}</span> 
+    <span class="px-1">&copy;</span> 2022
+  </footer>
+  
+{{end}}
+
+

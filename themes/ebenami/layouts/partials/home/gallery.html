@@ -1,7 +1,7 @@
 <section class="mt-10">
   {{ partial "components/section-title.html" (dict 
-    "title" "Gallery"
-    "description" "A collection of pictures from the research I have done so far"
+    "title" .title
+    "description" .description
   )}}
   <div class="grid grid-cols-4 gap-x-6 gap-y-10">
     {{ $url := .Params.name | lower | printf "/assets/images/gallery/%s"}}

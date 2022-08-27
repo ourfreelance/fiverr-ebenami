@@ -3,8 +3,7 @@
   "version": "1.0.1",
   "description": "ebenami description",
   "scripts": {
-    "dev": "hugo server --path-warnings --ignoreCache --disableFastRender --renderToDisk --cleanDestinationDir",
-    "tailwind-dev": "npx tailwindcss -i ./tailwind.css -o ./static/assets/css/styles.css --watch --minify",
+    "tailwind-dev": "npx tailwindcss -i ./tailwind.css -o ./themes/ebenami/static/assets/css/styles.css --watch",
     "commit": "git add . && git commit -m"
   },
   "keywords": [
