@@ -9,13 +9,22 @@
           {{ $url := .Params.name | lower | printf "/assets/images/gallery/%s"}}
           {{ $folder := .Params.name | lower | printf "/static/assets/images/gallery/%s"}}
           {{ if fileExists $folder }}
-          {{ $files := readDir $folder }}
-          {{ range $index, $file := $files }}
-            <div class="swiper-slide w-full">
-              <img class="w-full object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}"/>
-              <p class="text-white mt-1 text-sm md:text-base pl-3">{{ strings.TrimSuffix (path.Ext .Name) .Name }}</p>
-            </div>
-            {{end}}
+            {{ $files := readDir $folder }}
+            {{ if .limit }}
+              {{ range $index, $file := $files | first 8 }}
+                <div class="swiper-slide w-full">
+                  <img class="w-full object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}"/>
+                  <p class="text-white mt-1 text-sm md:text-base pl-3">{{ strings.TrimSuffix (path.Ext .Name) .Name }}</p>
+                </div>
+              {{end}}
+            {{ else }}
+              {{ range $index, $file := $files }}
+                <div class="swiper-slide w-full">
+                  <img class="w-full object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}"/>
+                  <p class="text-white mt-1 text-sm md:text-base pl-3">{{ strings.TrimSuffix (path.Ext .Name) .Name }}</p>
+                </div>
+              {{end}}
+            {{ end }}
           {{ end }}
         </div>
       </div>

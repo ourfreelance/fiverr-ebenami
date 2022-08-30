@@ -4,8 +4,8 @@
 
     {{ range (where .Site.Pages "Type" "home")}}
 
-      {{ if(eq .Params.Section_type "hero")}}
-        {{ partial "home/hero.html" (dict
+      {{ if(eq .Params.Section_type "about")}}
+        {{ partial "home/about.html" (dict
           "name" .Params.Name
           "short_description" .Params.Short_description
           "summary" .Summary

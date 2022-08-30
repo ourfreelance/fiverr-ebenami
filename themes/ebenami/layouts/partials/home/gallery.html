@@ -1,4 +1,4 @@
-<section x-data="gallery" class="mt-10">
+<section x-data="gallery" id="gallery" class="mt-10">
   
   <div class="flex items-center justify-between w-full">
     {{ partial "components/section-title.html" (dict 
@@ -17,7 +17,7 @@
     {{ $folder := .Params.name | lower | printf "/static/assets/images/gallery/%s"}}
     {{ if fileExists $folder }}
         {{ $files := readDir $folder }}
-        {{ range $index, $file := $files }}
+        {{ range $index, $file := $files | first 8 }}
         <div @click="changeOpenSelected({{$index}} + 1)" class="cursor-pointer hover:saturate-150 transition"> 
           <img class="w-full h-full aspect-square object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}"/>
         </div>
@@ -34,7 +34,7 @@
   </div>
 
 
-  {{ partial "components/popup-image-gallery.html" }}
+  {{ partial "components/popup-image-gallery.html" (dict "limit" 8)}}
 
 </section>
 

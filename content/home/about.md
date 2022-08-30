@@ -1,5 +1,5 @@
 ---
-section_type: "hero"
+section_type: "about"
 weight: 1
 
 name: "Elinor Benami"
