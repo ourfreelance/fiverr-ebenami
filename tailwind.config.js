@@ -2,9 +2,10 @@
 
 module.exports = {
   content: [
-    "./themes/**/*.html",
-    "./themes/**/*.html",
-    "./themes/**/*.js",
+    "./themes/ebenami/layouts/**/*.html",
+    "./themes/ebenami/layouts/**/*.html",
+    "./themes/ebenami/layouts/**/*.js",
+    "./themes/ebenami/static/**/*.js",
 
   ],
   theme: {

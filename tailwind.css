@@ -3,19 +3,4 @@
 @tailwind utilities;
 
 
-@layer components {
-  .menu {
-    @apply 
-      flex flex-col lg:flex-row 
-      items-center
-      gap-5 lg:gap-9 
-      px-5 py-7 lg:p-0 
-      absolute lg:static 
-      top-16 inset-x-0
-      text-lg
-      bg-white lg:bg-transparent
-      font-medium
-      transition lg:transition-none duration-300
-      z-30
-  }
-}
+[x-cloak] { display: none !important; }

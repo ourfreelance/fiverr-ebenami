@@ -1,7 +1,32 @@
 {{ define "main" }}
 
-  <main class="prose lg:prose-xl !max-w-screen-xl prose-headings:text-primary mx-auto text-gray px-5 pt-32 md:pt-48">
-    {{ .Content | safeHTML }}
+  <main class="max-w-screen-xl mx-auto text-gray px-5 pt-32 w-full">
+    {{ with .Resources.GetMatch "thumbnail.*" }}
+      <div class="w-full aspect-[1274/640] overflow-hidden">
+        <img class="w-full object-cover" src="{{ .RelPermalink }}">
+      </div>
+    {{ end }}
+
+    <article class="prose prose-headings:font-lato prose-a:text-primary prose-a:no-underline hover:prose-a:underline max-w-screen-lg mx-auto font-roboto">
+
+      <div class="not-prose pt-6 md:pt-12 pb-6 md:pb-10 border-b border-primary-gray mb-8 md:mb-12">
+        <h1 class="font-lato text-2xl md:text-3xl lg:text-4xl font-bold text-primary-dark-gray">
+          {{ .Title }}
+        </h1>
+        <div class="font-roboto flex items-center gap-4 mt-3 md:mt-5"> 
+          <div class="flex items-center gap-2 font-medium text-primary text-sm md:text-base">
+            <img src="/assets/images/date.svg" alt="">
+            {{ dateFormat "02 Jan, 2006" .Date.Local }}
+          </div>
+          <div class="flex items-center gap-2 font-medium text-primary text-sm md:text-base">
+            <img src="/assets/images/folder.svg" alt="">
+            {{ .Params.Categories }}
+          </div>
+        </div>
+      </div>
+
+      {{ .Content | safeHTML }}
+    </article>
   </main>
 
 {{end}}

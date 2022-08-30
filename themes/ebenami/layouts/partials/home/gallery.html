@@ -1,18 +1,43 @@
-<section class="mt-10">
-  {{ partial "components/section-title.html" (dict 
-    "title" .title
-    "description" .description
-  )}}
-  <div class="grid grid-cols-4 gap-x-6 gap-y-10">
+<section x-data="gallery" class="mt-10">
+  
+  <div class="flex items-center justify-between w-full">
+    {{ partial "components/section-title.html" (dict 
+      "title" .title
+      "description" .description
+    )}}
+    <div class="hidden md:flex items-center gap-5">
+      <a href="/gallery" class="text-white bg-primary px-6 p-3 rounded-lg hover:opacity-90 transition">
+        View All
+      </a>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-x-3 md:gap-x-6 gap-y-6 md:gap-y-10">
     {{ $url := .Params.name | lower | printf "/assets/images/gallery/%s"}}
     {{ $folder := .Params.name | lower | printf "/static/assets/images/gallery/%s"}}
     {{ if fileExists $folder }}
         {{ $files := readDir $folder }}
-        {{ range $files }}
-        <div>
+        {{ range $index, $file := $files }}
+        <div @click="changeOpenSelected({{$index}} + 1)" class="cursor-pointer hover:saturate-150 transition"> 
           <img class="w-full h-full aspect-square object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}"/>
         </div>
         {{end}}
     {{ end }}
   </div>
+  
+  <div class="flex items-center justify-center w-full mt-10">
+    <div class="flex md:hidden items-center gap-5">
+      <a href="/gallery" class="text-white bg-primary px-6 p-3 rounded-lg hover:opacity-90 transition">
+        View All
+      </a>
+    </div>
+  </div>
+
+
+  {{ partial "components/popup-image-gallery.html" }}
+
 </section>
+
+{{ define "scripts" }}
+  <script src="/assets/js/swiper-gallery.js"></script>
+{{ end }}

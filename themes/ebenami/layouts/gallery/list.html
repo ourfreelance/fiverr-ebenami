@@ -1,0 +1,37 @@
+{{ define "main" }}
+<main x-data="gallery" class="pt-32 max-w-screen-xl px-5 mx-auto">
+
+  <h2 class="font-lato text-3xl md:text-4xl font-bold text-primary mb-3">
+    View All: <span class="text-primary-dark-gray">(Gallery)</span>
+  </h2>
+  <p class="font-roboto text-sm md:text-base lg:text-lg font-medium">
+    Gallery related posts
+  </p>
+
+  <section class="mt-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-x-3 md:gap-x-6 gap-y-6 md:gap-y-10">
+      {{ $url := .Params.name | lower | printf "/assets/images/gallery/%s"}}
+      {{ $folder := .Params.name | lower | printf "/static/assets/images/gallery/%s"}}
+      {{ if fileExists $folder }}
+      {{ $files := readDir $folder }}
+      {{ range $index, $element :=  $files }}
+        <div 
+          @click="changeOpenSelected({{$index}} + 1)" 
+          class="cursor-pointer hover:saturate-150 transition {{ if or (eq $index 0 ) (eq $index 1)}}col-span-2{{end}}" 
+        >
+          <img class="w-full h-full aspect-square object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}"/>
+        </div>
+      {{end}}
+      {{ end }}
+    </div>
+  </section>
+
+  {{ partial "components/popup-image-gallery.html" }}
+
+</main>
+
+{{ end }}
+
+{{ define "scripts" }}
+  <script src="/assets/js/swiper-gallery.js"></script>
+{{ end }}

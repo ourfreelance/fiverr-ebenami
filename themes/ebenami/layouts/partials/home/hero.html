@@ -1,37 +1,48 @@
-<section x-data="{open: false}" class="grid grid-cols-2 space-x-10 mt-10" :class="open ? 'items-start' :'items-center'">
-  <div>
+<section x-data="{open: false}" class="grid grid-cols-1 lg:grid-cols-2 lg:space-x-10 mt-0 md:mt-10 items-center" :class="open ? '!items-start' :'!items-center'">
+  <div class="mt-10 lg:mt-0 order-last lg:order-first">
     <div class="flex items-center gap-3">
-      <img class="inline-block" src="/assets/images/hi.png" alt="">
-      <h1 class="font-lato text-4xl font-bold text-primary">
+      <img class="w-7 md:w-10" src="/assets/images/hi.png" alt="">
+      <h1 class="font-lato text-2xl md:text-3xl lg:text-4xl font-bold text-primary">
         {{ .name }}
       </h1>
     </div>
-    <div  class="font-roboto my-10 font-medium text-xl text-primary-gray space-y-5">
+    <div class="font-roboto mt-5 mb-8 md:my-10 font-medium text-sm md:text-base lg:text-xl text-primary-gray space-y-5">
       <p x-show="!open">
-        {{ .short_description }} 
-        <span @click="open = true" class="text-primary cursor-pointer hover:opacity-90">Read More...</span>
+        {{ .summary }} 
+        <span @click="open = true" class="text-primary cursor-pointer hover:opacity-90 whitespace-nowrap">Read More...</span>
       </p>
-      <div x-show="open" class="space-y-7">
+      <div x-cloak x-show="open" class=" space-y-4 md:space-y-7 [&_a]:text-primary hover:[&_a]:underline">
         {{ .content }}
-        <span @click="open = false" class="text-primary cursor-pointer hover:opacity-90">Read Less...</span>
+        <span @click="open = false" class="text-primary cursor-pointer hover:opacity-90 whitespace-nowrap">Read Less...</span>
       </div>
-      <button @click="open = !open" class="text-primary -mt-5">
-        
-      </button>
     </div>
-    <div class="flex items-center gap-5">
-      <a href="emailto:{{ .email }}" class="block px-8 py-3 rounded-md bg-primary text-white font-medium hover:opacity-90 transition">
+    <div class="flex flex-col md:flex-row items-center gap-5">
+      <a href="emailto:{{ .email }}" class="flex items-center justify-center gap-2 px-8 py-3.5 w-full md:w-auto text-center rounded-lg border-2 border-primary bg-primary text-white font-medium hover:opacity-90 transition" target="_blank">
+
+        <!-- email icon -->
+        <svg class="fill-current" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 3L8 6.75L2 3V1.5L8 5.25L14 1.5M14 0H2C1.1675 0 0.5 0.6675 0.5 1.5V10.5C0.5 10.8978 0.658035 11.2794 0.93934 11.5607C1.22064 11.842 1.60218 12 2 12H14C14.3978 12 14.7794 11.842 15.0607 11.5607C15.342 11.2794 15.5 10.8978 15.5 10.5V1.5C15.5 1.10218 15.342 0.720644 15.0607 0.43934C14.7794 0.158035 14.3978 0 14 0V0Z"/>
+        </svg>
+
         Email Me
       </a>
-      <a href="{{ .cv_url }}" class="block px-8 py-3 rounded-md border border-primary text-primary font-medium hover:opacity-90 transition">
+      <a href="{{ .cv_url }}" class="flex items-center justify-center gap-2 px-8 py-3.5 w-full md:w-auto text-center rounded-lg border-2 border-primary text-primary font-medium bg-white hover:bg-primary hover:text-white transition duration-300" target="_blank">
+
+        <!-- document icon -->
+        <svg class="fill-current" width="12" height="16" viewBox="0 0 12 16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.75 5.75V1.625L10.875 5.75M1.5 0.5C0.6675 0.5 0 1.1675 0 2V14C0 14.3978 0.158035 14.7794 0.43934 15.0607C0.720644 15.342 1.10218 15.5 1.5 15.5H10.5C10.8978 15.5 11.2794 15.342 11.5607 15.0607C11.842 14.7794 12 14.3978 12 14V5L7.5 0.5H1.5Z"/>
+        </svg>
+
         Download CV
       </a>
     </div>
   </div>
-  <div class="relative justify-self-end aspect-[426/421] h-[421px] bg-primary rounded-lg">
-    <img class="absolute bottom-0 left-1/2 -translate-x-1/2" src="/assets/images/profile.png" alt="profile">
-    <img class="absolute top-14 -left-8" src="/assets/images/Mentor.svg" alt="">
-    <img class="absolute bottom-20 -right-8" src="/assets/images/Communicate.svg" alt="">
+  <div class="relative lg:justify-self-end aspect-[426/421] h-full sm:h-[421px] bg-primary rounded-lg order-first lg:order-last">
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full px-10 lg:px-12">
+      <img class="w-full" src="/assets/images/profile.png" alt="profile">
+    </div>
+    <img class="hidden lg:block absolute top-14 -left-8" src="/assets/images/Mentor.svg" alt="">
+    <img class="hidden lg:block absolute bottom-20 -right-8" src="/assets/images/Communicate.svg" alt="">
   </div>
 
 </section>

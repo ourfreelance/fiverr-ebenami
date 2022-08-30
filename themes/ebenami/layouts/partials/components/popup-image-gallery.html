@@ -1,0 +1,36 @@
+<!-- popup images -->
+<div x-cloak x-show="openSelected" x-transition.opacity.duration.200  class="fixed inset-0 w-full h-full z-50 bg-black/50 flex items-center justify-center">
+  <div class="w-[70%] md:max-w-screen-md mx-auto">
+    <div class="relative" @click.outside="openSelected = null">
+      <div  class="swiper swiper-gallery">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper w-full">
+          <!-- Slides -->
+          {{ $url := .Params.name | lower | printf "/assets/images/gallery/%s"}}
+          {{ $folder := .Params.name | lower | printf "/static/assets/images/gallery/%s"}}
+          {{ if fileExists $folder }}
+          {{ $files := readDir $folder }}
+          {{ range $index, $file := $files }}
+            <div class="swiper-slide w-full">
+              <img class="w-full object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}"/>
+              <p class="text-white mt-1 text-sm md:text-base pl-3">{{ strings.TrimSuffix (path.Ext .Name) .Name }}</p>
+            </div>
+            {{end}}
+          {{ end }}
+        </div>
+      </div>
+
+      <button type="button" class="swiper-gallery-prev absolute top-1/2 -translate-y-1/2 -left-12 md:-left-14 h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full text-primary bg-primary text-white transition duration-300">
+        <svg class="fill-current" width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.91 10.58L3.33 6L7.91 1.41L6.5 0L0.5 6L6.5 12L7.91 10.58Z" />
+        </svg>
+      </button>
+
+      <button type="button" class="swiper-gallery-next absolute top-1/2 -translate-y-1/2 -right-12 md:-right-14 h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full text-primary bg-primary text-white transition duration-300">
+        <svg class="fill-current" width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.0900269 10.58L4.67003 6L0.0900269 1.41L1.50003 0L7.50003 6L1.50003 12L0.0900269 10.58Z"/>
+        </svg>          
+      </button>
+    </div>
+  </div>
+</div>
