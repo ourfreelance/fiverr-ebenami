@@ -27,6 +27,7 @@ theme = "Ebenami"
 
   primary_color = "#435E4D" # Green Color
 
+  # for Social Media on Header
   twitter_url = ""
   linkedin_url = ""
   github_url = ""

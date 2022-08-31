@@ -5,6 +5,7 @@ weight: 2.5
 title: "Students"
 description: "Research, teaching & mentoring, opportunities, resources"
 
+# students images based of static folder
 students: 
   - name: "John Doe"
     image: "/assets/images/students/john-doe.png"

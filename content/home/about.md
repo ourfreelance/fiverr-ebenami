@@ -2,6 +2,7 @@
 section_type: "about"
 weight: 1
 
+# photo based of static folder
 photo: "/assets/images/profile.png"
 name: "Elinor Benami"
 email: ""
