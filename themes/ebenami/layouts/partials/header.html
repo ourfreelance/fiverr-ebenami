@@ -1,12 +1,15 @@
 <header x-data="{open: false}" class="navbar fixed top-0 left-0 w-full z-50 bg-light">
   <div class="fixed bottom-0 left-0 w-full lg:static translate-y-[150%] lg:translate-y-0 transition duration-500" :class="open ? 'translate-y-0' : 'translate-y-[150%]'">
-    <div class="max-w-screen-xl mx-auto h-screen lg:h-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between px-5 py-3 gap-10 bg-white lg:bg-transparent" >
+    <div class="max-w-screen-xl mx-auto h-screen lg:h-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between px-5 py-1 gap-10 bg-white lg:bg-transparent" >
+
       <nav class="flex flex-col lg:flex-row items-center gap-7 font-lato font-bold text-lg">
-        <a href="/#about" class="hover:text-primary transition">About</a>
-        <a href="/#posts" class="hover:text-primary transition">Posts</a>
-        <a href="/#students" class="hover:text-primary transition">Students</a>
-        <a href="/#gallery" class="hover:text-primary transition">Gallery</a>
+        <a @click="open = false" href="/#about" class="hover:text-primary transition">About</a>
+        <a @click="open = false" href="/#posts" class="hover:text-primary transition">Posts</a>
+        <a @click="open = false" href="/#students" class="hover:text-primary transition">Students</a>
+        <a @click="open = false" href="/#gallery" class="hover:text-primary transition">Gallery</a>
       </nav>
+
+      {{/*  Social media  */}}
       <div class="flex items-center justify-center lg:justify-between relative w-full lg:w-auto lg:h-auto py-4 z-40">
         <div class="flex items-center justify-center gap-5">
           <a href="{{ .Site.Params.Twitter_url }}" class="h-12 w-12 flex items-center justify-center rounded-full border-2 text-primary border-primary hover:bg-primary hover:text-white transition">
@@ -31,13 +34,13 @@
             </svg>  
           </a>
         </div>
-        <div class="toggle-menu block lg:hidden cursor-pointer">
-          <!-- <img src="/assets/images/menu.svg" alt="menu"> -->
-        </div>
+
       </div>
     </div>
   </div>
 
+
+  {{/*  Navbar on Mobile  */}}
   <div class="fixed bottom-0 left-0 w-full z-20 flex lg:hidden items-center justify-between bg-white py-4 text-primary font-lato font-bold text-lg px-5">
     <h1>{{ .Site.Params.Author }}</h1>
 

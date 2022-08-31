@@ -2,6 +2,7 @@
 section_type: "about"
 weight: 1
 
+photo: "/assets/images/profile.png"
 name: "Elinor Benami"
 email: ""
 cv_url: "https://www.ebenami.com/s/cv_Benami_feb2022.pdf"

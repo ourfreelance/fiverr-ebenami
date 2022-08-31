@@ -4,5 +4,5 @@ weight: 2
 
 title: "Posts"
 description: "Research, teaching & mentoring, opportunities, resources"
-list_of_folder: "posts" # content/[posts]
+# the content based of folder content/posts
 ---

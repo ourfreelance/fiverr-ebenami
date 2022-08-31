@@ -2,12 +2,15 @@
   
   <main class="pt-10 lg:pt-32 max-w-screen-xl px-5 mx-auto space-y-32 lg:space-y-52">
 
+    {{ $paginate := .Paginate (where .Site.RegularPages "Type" "posts" )}}
+    {{ $paginator := .Paginator }}
+
     {{ range (where .Site.Pages "Type" "home")}}
 
       {{ if(eq .Params.Section_type "about")}}
         {{ partial "home/about.html" (dict
           "name" .Params.Name
-          "short_description" .Params.Short_description
+          "photo" .Params.Photo
           "summary" .Summary
           "content" .Content
           "email" .Params.Email
@@ -19,7 +22,8 @@
         {{ partial "home/posts.html" (dict 
           "title" .Params.Title
           "description" .Params.Description
-          "posts" (where .Site.Pages "Type" .Params.List_of_folder )
+          "posts" $paginate.Pages
+          "paginator" $paginator
         )}}
       {{ end }}
 
