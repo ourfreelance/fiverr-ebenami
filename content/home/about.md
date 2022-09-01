@@ -3,7 +3,7 @@ section_type: "about"
 weight: 1
 
 # photo based of static folder
-photo: "/assets/images/profile.png"
+photo: "/assets/images/profile.webp"
 name: "Elinor Benami"
 email: ""
 cv_url: "https://www.ebenami.com/s/cv_Benami_feb2022.pdf"
