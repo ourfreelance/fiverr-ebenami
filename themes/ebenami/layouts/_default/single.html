@@ -18,10 +18,10 @@
             <img src="/assets/images/date.svg" alt="">
             {{ dateFormat "02 Jan, 2006" .Date.Local }}
           </div>
-          <div class="flex items-center gap-2 font-medium text-primary text-sm md:text-base">
+          <a href="/categories/{{ urlize .Params.Categories }}" class="flex items-center gap-2 font-medium text-primary text-sm md:text-base">
             <img src="/assets/images/folder.svg" alt="">
             {{ .Params.Categories }}
-          </div>
+          </a>
         </div>
       </div>
 
