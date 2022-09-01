@@ -3,7 +3,7 @@
   <main class="max-w-screen-xl mx-auto text-gray px-5 pt-32 w-full">
     {{ with .Resources.GetMatch "thumbnail.*" }}
       <div class="w-full aspect-[1274/640] rounded-lg overflow-hidden">
-        <img class="w-full object-cover" src="{{ .RelPermalink }}">
+        <img class="w-full object-cover" src="{{ .RelPermalink }}" alt="thumbnail">
       </div>
     {{ end }}
 
@@ -15,11 +15,11 @@
         </h1>
         <div class="font-roboto flex items-center gap-4 mt-3 md:mt-5"> 
           <div class="flex items-center gap-2 font-medium text-primary text-sm md:text-base">
-            <img src="/assets/images/date.svg" alt="">
+            <img src="/assets/images/date.svg" alt='post date - {{ dateFormat "02 Jan, 2006" .Date.Local }}'>
             {{ dateFormat "02 Jan, 2006" .Date.Local }}
           </div>
           <a href="/categories/{{ urlize .Params.Categories }}" class="flex items-center gap-2 font-medium text-primary text-sm md:text-base">
-            <img src="/assets/images/folder.svg" alt="">
+            <img src="/assets/images/folder.svg" alt="category - {{ urlize .Params.Categories }}">
             {{ .Params.Categories }}
           </a>
         </div>

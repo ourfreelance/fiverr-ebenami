@@ -28,7 +28,7 @@
         <div class="swiper-slide">
           <div class="bg-white rounded-lg p-5">
             <div class="w-full" style="aspect-ratio: 365/300;">
-              <img class="mb-6 w-full h-full rounded-lg  object-cover" src="{{ .image }}">
+              <img class="mb-6 w-full h-full rounded-lg  object-cover" src="{{ .image }}" alt="{{ .name }}">
             </div>
             <div class="space-y-5">
               <h2 class="text-3xl font-bold text-primary-dark-gray">
@@ -39,20 +39,20 @@
               </p>
             </div>
             <div class="flex items-center gap-5 mt-5">
-              <a href="{{ .twitter_url }}" class="h-10 w-10 flex items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white hover:opacity-80 transition">
+              <a href="{{ .twitter_url }}" class="h-10 w-10 flex items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white hover:opacity-80 transition" aria-label="twitter">
                 <!-- twitter icon -->
                 <svg class="fill-current" width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16.345 2C15.7675 2.2625 15.145 2.435 14.5 2.5175C15.16 2.12 15.67 1.49 15.91 0.7325C15.2875 1.1075 14.5975 1.37 13.87 1.52C13.2775 0.875 12.445 0.5 11.5 0.5C9.73753 0.5 8.29753 1.94 8.29753 3.7175C8.29753 3.9725 8.32753 4.22 8.38003 4.4525C5.71003 4.3175 3.33253 3.035 1.75003 1.0925C1.47253 1.565 1.31503 2.12 1.31503 2.705C1.31503 3.8225 1.87753 4.8125 2.74753 5.375C2.21503 5.375 1.72003 5.225 1.28503 5V5.0225C1.28503 6.5825 2.39503 7.8875 3.86503 8.18C3.39307 8.30916 2.8976 8.32713 2.41753 8.2325C2.62123 8.87186 3.02018 9.43131 3.55829 9.8322C4.0964 10.2331 4.74661 10.4553 5.41753 10.4675C4.28025 11.3678 2.87053 11.8545 1.42003 11.8475C1.16503 11.8475 0.910029 11.8325 0.655029 11.8025C2.08003 12.7175 3.77503 13.25 5.59003 13.25C11.5 13.25 14.7475 8.345 14.7475 4.0925C14.7475 3.95 14.7475 3.815 14.74 3.6725C15.37 3.2225 15.91 2.6525 16.345 2Z"/>
                 </svg>
               </a>
-              <a href="{{ .linkedin_url }}" class="h-10 w-10 flex items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white hover:opacity-80 transition">
+              <a href="{{ .linkedin_url }}" class="h-10 w-10 flex items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white hover:opacity-80 transition" aria-label="linkedin">
 
                 <!-- linkedin icon -->
                 <svg class="fill-current" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.75 0.75C13.1478 0.75 13.5294 0.908035 13.8107 1.18934C14.092 1.47064 14.25 1.85218 14.25 2.25V12.75C14.25 13.1478 14.092 13.5294 13.8107 13.8107C13.5294 14.092 13.1478 14.25 12.75 14.25H2.25C1.85218 14.25 1.47064 14.092 1.18934 13.8107C0.908035 13.5294 0.75 13.1478 0.75 12.75V2.25C0.75 1.85218 0.908035 1.47064 1.18934 1.18934C1.47064 0.908035 1.85218 0.75 2.25 0.75H12.75ZM12.375 12.375V8.4C12.375 7.75155 12.1174 7.12965 11.6589 6.67112C11.2003 6.2126 10.5785 5.955 9.93 5.955C9.2925 5.955 8.55 6.345 8.19 6.93V6.0975H6.0975V12.375H8.19V8.6775C8.19 8.1 8.655 7.6275 9.2325 7.6275C9.51098 7.6275 9.77805 7.73812 9.97496 7.93504C10.1719 8.13195 10.2825 8.39902 10.2825 8.6775V12.375H12.375ZM3.66 4.92C3.99417 4.92 4.31466 4.78725 4.55095 4.55095C4.78725 4.31466 4.92 3.99417 4.92 3.66C4.92 2.9625 4.3575 2.3925 3.66 2.3925C3.32384 2.3925 3.00144 2.52604 2.76374 2.76374C2.52604 3.00144 2.3925 3.32384 2.3925 3.66C2.3925 4.3575 2.9625 4.92 3.66 4.92ZM4.7025 12.375V6.0975H2.625V12.375H4.7025Z"/>
                   </svg>
               </a>
-              <a href="{{ .github_url }}" class="h-10 w-10 flex items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white hover:opacity-80 transition">
+              <a href="{{ .github_url }}" class="h-10 w-10 flex items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white hover:opacity-80 transition" aria-label="github">
 
                 <!-- github icon -->
                 <svg class="fill-current" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">

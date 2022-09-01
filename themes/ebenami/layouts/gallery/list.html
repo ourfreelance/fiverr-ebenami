@@ -19,7 +19,7 @@
             @click="changeOpenSelected({{$index}} + 1)" 
             class="cursor-pointer hover:saturate-150 transition {{ if or (eq $index 0 ) (eq $index 1)}}col-span-2{{end}}" 
           >
-            <img class="w-full h-full aspect-square object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}"/>
+            <img class="w-full h-full aspect-square object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}" alt="{{.Name}}"/>
           </div>
         {{end}}
       {{ end }}

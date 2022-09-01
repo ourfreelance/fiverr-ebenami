@@ -13,14 +13,14 @@
             {{ if .limit }}
               {{ range $index, $file := $files | first 8 }}
                 <div class="swiper-slide w-full">
-                  <img class="w-full object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}"/>
+                  <img class="w-full object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}" alt="{{.Name}}"/>
                   <p class="text-white mt-1 text-sm md:text-base pl-3">{{ strings.TrimSuffix (path.Ext .Name) .Name }}</p>
                 </div>
               {{end}}
             {{ else }}
               {{ range $index, $file := $files }}
                 <div class="swiper-slide w-full">
-                  <img class="w-full object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}"/>
+                  <img class="w-full object-cover object-center rounded-lg" src="/assets/images/gallery/{{.Name}}" alt="{{.Name}}"/>
                   <p class="text-white mt-1 text-sm md:text-base pl-3">{{ strings.TrimSuffix (path.Ext .Name) .Name }}</p>
                 </div>
               {{end}}
