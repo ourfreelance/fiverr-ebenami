@@ -4,6 +4,7 @@
   "description": "ebenami description",
   "scripts": {
     "tailwind-dev": "npx tailwindcss -i ./tailwind.css -o ./themes/ebenami/static/assets/css/styles.css --watch",
+    "tailwind-prod": "npx tailwindcss -i ./tailwind.css -o ./themes/ebenami/static/assets/css/styles.css --minify",
     "commit": "git add . && git commit -m"
   },
   "keywords": [

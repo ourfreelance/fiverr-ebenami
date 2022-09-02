@@ -3,7 +3,7 @@ section_type: "students"
 weight: 2.5
 
 title: "Students"
-description: "Research, teaching & mentoring, opportunities, resources"
+description: "Some profiles of my students"
 
 # students images based of static folder
 students: 

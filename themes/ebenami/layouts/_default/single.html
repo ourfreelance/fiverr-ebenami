@@ -1,8 +1,8 @@
 {{ define "main" }}
 
-  <main class="max-w-screen-xl mx-auto text-gray px-5 pt-32 w-full">
+  <main class="max-w-screen-xl mx-auto text-gray px-5 pt-5 md:pt-32 w-full">
     {{ with .Resources.GetMatch "thumbnail.*" }}
-      <div class="w-full aspect-[1274/640] rounded-lg overflow-hidden">
+      <div class="w-full aspect-[320/200] md:aspect-[1274/640] rounded-lg overflow-hidden">
         <img class="w-full object-cover" src="{{ .RelPermalink }}" alt="thumbnail">
       </div>
     {{ end }}
